@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crymson Gen - Steam Game Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <h2>Loading Crymson Gen...</h2>
+            <div class="loading-messages">
+                <div class="loading-message" id="loadingMessage">Initializing application...</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="app-container" id="mainApp" style="display: none;">
+        <header class="app-header" id="appHeader">
+            <div class="header-left">
+                <div class="app-icon">
+                    <i class="fas fa-gamepad"></i>
+                </div>
+                <h1 class="app-title">Crymson Gen</h1>
+            </div>
+            <div class="header-controls">
+                <button class="header-btn minimize-btn" id="minimizeBtn">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button class="header-btn close-btn" id="closeBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </header>
+        <main class="main-content">
+            <nav class="tab-nav">
+                <button class="tab-btn active" data-tab="game-generator">
+                    <i class="fas fa-download"></i>
+                    Game Generator
+                </button>
+                <button class="tab-btn" data-tab="bypasses">
+                    <i class="fas fa-shield-alt"></i>
+                    Bypasses
+                </button>
+                <button class="tab-btn" data-tab="dlc-installer">
+                    <i class="fas fa-puzzle-piece"></i>
+                    DLC Installer
+                </button>
+            </nav>
+
+            <div class="tab-content">
+                <div class="tab-pane active" id="game-generator">
+                    <div class="tab-header">
+                        <h2><i class="fas fa-download"></i> Steam Game Generator</h2>
+                        <p>Enter a Steam App ID to generate and install a game</p>
+                    </div>
+                    
+                    <div class="input-section">
+                        <div class="input-group">
+                            <label for="appId">Steam App ID:</label>
+                            <input type="text" id="appId" placeholder="Enter Steam App ID (e.g., 730 for CS2)">
+                            <button class="btn btn-primary" id="generateBtn">
+                                <i class="fas fa-download"></i>
+                                Generate Game
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="log-section">
+                        <h3><i class="fas fa-terminal"></i> Activity Log</h3>
+                        <div class="log-container" id="gameLog">
+                            <div class="log-entry">
+                                <span class="log-time">[12:00:00]</span>
+                                <span class="log-message">Game Generator loaded successfully</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane" id="bypasses">
+                    <div class="tab-header">
+                        <h2><i class="fas fa-shield-alt"></i> Game Bypasses</h2>
+                        <p>Access game bypasses and fixes</p>
+                    </div>
+                    
+                    <div class="search-section">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="bypassSearch" placeholder="Search bypasses...">
+                        </div>
+                    </div>
+
+                    <div class="bypasses-list" id="bypassesList">
+                    </div>
+                </div>
+
+                <div class="tab-pane" id="dlc-installer">
+                    <div class="tab-header">
+                        <h2><i class="fas fa-puzzle-piece"></i> DLC Installer</h2>
+                        <p>Download and extract CreamInstaller v5.0.0</p>
+                    </div>
+                    
+                    <div class="dlc-section">
+                        <div class="dlc-card">
+                            <div class="dlc-icon">
+                                <i class="fas fa-download"></i>
+                            </div>
+                            <h3>CreamInstaller v5.0.0</h3>
+                            <p>Download and extract the latest Cream Installer from Google Drive</p>
+                            <button class="btn btn-primary btn-large" id="downloadCreamBtn">
+                                <i class="fas fa-cloud-download-alt"></i>
+                                Download & Extract Cream Installer
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
