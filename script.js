@@ -1,4 +1,4 @@
-﻿
+
 
 class CrymsonApp {
     constructor() {
@@ -60,7 +60,7 @@ class CrymsonApp {
         
         document.querySelectorAll('.tab-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
-                const tabName = e.target.dataset.tab;
+                const tabName = e.currentTarget.dataset.tab;
                 this.switchTab(tabName);
             });
         });
@@ -249,8 +249,8 @@ class CrymsonApp {
     sendMessage(action, data = {}) {
         if (window.chrome && window.chrome.webview) {
             window.chrome.webview.postMessage(JSON.stringify({
-                Action: action,
-                Data: data
+                action: action,
+                data: data
             }));
         } else {
         }
